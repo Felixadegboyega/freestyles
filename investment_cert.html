@@ -1,193 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Document</title>
-		<style>
-			* {
-				margin: 0;
-				padding: 0;
-			}
+      @font-face {
+        font-family: "gothic";
+        src: url("http://localhost:4200/assets/fonts/GOTHIC.TTF");
+      }
 
-			@font-face {
-				font-family: "gothic";
-				src: url("http://localhost:4200/assets/fonts/GOTHIC.TTF");
-			}
+      @media print {
+        @page {
+          margin: 0;
+          size: auto;
+        }
 
-			@media print {
-				@page {
-					margin: 0;
-					size: auto;
-				}
+        body {
+          margin: 0;
+          padding: 0;
+        }
 
-				body {
-					margin: 0;
-					padding: 0;
+        @page {
+          @top-left {
+            content: none;
+          }
 
-				}
+          @top-center {
+            content: none;
+          }
 
-				@page {
-					@top-left {
-						content: none;
-					}
+          @top-right {
+            content: none;
+          }
 
-					@top-center {
-						content: none;
-					}
+          @bottom-left {
+            content: none;
+          }
 
-					@top-right {
-						content: none;
-					}
+          @bottom-center {
+            content: none;
+          }
 
-					@bottom-left {
-						content: none;
-					}
+          @bottom-right {
+            content: none;
+          }
+        }
+      }
 
-					@bottom-center {
-						content: none;
-					}
+      .container {
+        font-family: gothic system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+          "Helvetica Neue", sans-serif;
+        display: flex;
+        flex-direction: column;
+        max-width: 50rem;
+        margin: auto;
+        gap: 2rem;
+        font-size: 0.9rem;
+        padding: 3rem;
+      }
 
-					@bottom-right {
-						content: none;
-					}
-				}
-			}
+      h3 {
+        font-weight: bold;
+      }
 
-			.container {
-				font-family: gothic system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-				display: flex;
-				flex-direction: column;
-				max-width: 50rem;
-				margin: auto;
-				gap: 2rem;
-				font-size: .9rem;
-				padding: 3rem;
-			}
+      table {
+        text-align: left;
+        border-collapse: collapse;
+      }
 
-			h3 {
-				font-weight: bold;
-			}
+      table th,
+      table td {
+        border: 1px solid #000;
+        padding: 0.3rem 0.5rem;
+        width: 50%;
+        font-weight: bold;
+      }
 
-			table {
-				text-align: left;
-				border-collapse: collapse;
-			}
+      .signatures-container {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+      }
 
-			table th,
-			table td {
-				border: 1px solid #000;
-				padding: .3rem .5rem;
-				width: 50%;
-				font-weight: bold;
-			}
+      .signatures-container > div {
+        width: fit-content;
+        text-align: center;
+      }
 
-			.signatures-container {
-				display: flex;
-				justify-content: space-between;
-				font-size: .85rem;
-			}
+      .signatures-container > div > div {
+        width: 10rem;
+        border-bottom: 2px solid #000;
+        height: 4rem;
+        margin-bottom: 0.3rem;
+      }
 
-			.signatures-container>div {
-				width: fit-content;
-				text-align: center;
-			}
+      .note {
+        border-top: 1.5px dotted #000;
+        border-bottom: 1.5px dotted #000;
+        padding: 1rem 0;
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+    </style>
+  </head>
 
-			.signatures-container>div>div {
-				width: 10rem;
-				border-bottom: 2px solid #000;
-				height: 4rem;
-				margin-bottom: .3rem;
-			}
+  <body>
+    <div class="container">
+      <p>Plot 1601, Adeola Hopewell Street, Victoria Island, Lagos.</p>
+      <h3>Sat Jan 04 2025</h3>
+      <div>
+        <h3>NERTHBOX ICT</h3>
+        <p>6 Kufeji Street, Alagomeji Yaba, Yaba, Lagos State. Nerthbox ICT,</p>
+      </div>
+      <h3>INVESTMENT CERTIFICATE</h3>
+      <p>
+        We confirm your investment with us under the following terms and
+        conditions:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>INVESTMENT TYPE</th>
+            <th>TRO-VEST INVESTMENT NOTE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRINCIPA</td>
+            <td>₦2L000L000,00</td>
+          </tr>
+        </tbody>
+      </table>
 
-			.note {
-				border-top: 1.5px dotted #000;
-				border-bottom: 1.5px dotted #000;
-				padding: 1rem 0;
-				font-size: .8rem;
-				display: flex;
-				flex-direction: column;
-				gap: .3rem;
-			}
-		</style>
-	</head>
+      <div class="signatures-container">
+        <div>
+          <div>Hello</div>
+          Funds Manager
+        </div>
 
-	<body>
-		<div class="container">
-			<p>Plot 1601, Adeola Hopewell Street, Victoria Island, Lagos.</p>
-			<h3>Sat Jan 04 2025</h3>
-			<div>
-				<h3>NERTHBOX ICT</h3>
-				<p>6 Kufeji Street, Alagomeji Yaba,
-					Yaba, Lagos State.
-					Nerthbox ICT,</p>
-			</div>
-			<h3>INVESTMENT CERTIFICATE</h3>
-			<p>We confirm your investment with us under the following terms and conditions:</p>
-			<table>
-				<thead>
-					<tr>
-						<th>INVESTMENT TYPE</th>
-						<th>TRO-VEST INVESTMENT NOTE</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>PRINCIPA</td>
-						<td>₦2L000L000,00</td>
-					</tr>
-				</tbody>
-			</table>
+        <div>
+          <div>Hello</div>
+          Managing Director
+        </div>
+      </div>
 
-			<div class="signatures-container">
-				<div>
-					<div>
-						Hello
-					</div>
-					Funds Manager
-				</div>
-
-				<div>
-					<div>
-						Hello
-					</div>
-					Managing Director
-				</div>
-			</div>
-
-			<div class="note">
-				<div style="text-decoration: underline;">PLEASE NOTE</div>
-				<div>
-					* Your payment for the Investment and issuance of this Certificate
-					confirm mutual agreement to the contract terms.
-				</div>
-				<div>
-					* Where the Investment booking details does not agree with your
-					records, kindly contact our customer care department at
-					<span style="color: blue; white-space: nowrap">{{
-			                company?.support_email
-			              }}</span>
-					or your Relationship Manager immediately for regularization.
-				</div>
-				<div>
-					* Kindly confirm to us your rollover instructions on or before
-					maturity if there is any change.
-				</div>
-				<div>
-					* Upon pre - liquidation of this investment, interest shall be
-					calculated at a penal rate to be determined from time to time.
-				</div>
-				<div>
-					* {{ company?.name }} also reserves the right to adjust the rates
-					upwards or downwards in line with market realities.
-				</div>
-				<div>
-					* Pre - liquidation of investment will be treated within 48 hours
-					from the date the liquidation request is received.
-				</div>
-			</div>
-		</div>
-	</body>
-
+      <div class="note">
+        <div style="text-decoration: underline">PLEASE NOTE</div>
+        <div>
+          * Your payment for the Investment and issuance of this Certificate
+          confirm mutual agreement to the contract terms.
+        </div>
+        <div>
+          * Where the Investment booking details does not agree with your
+          records, kindly contact our customer care department at
+          <span style="color: blue; white-space: nowrap"
+            >{{ company?.support_email }}</span
+          >
+          or your Relationship Manager immediately for regularization.
+        </div>
+        <div>
+          * Kindly confirm to us your rollover instructions on or before
+          maturity if there is any change.
+        </div>
+        <div>
+          * Upon pre - liquidation of this investment, interest shall be
+          calculated at a penal rate to be determined from time to time.
+        </div>
+        <div>
+          * {{ company?.name }} also reserves the right to adjust the rates
+          upwards or downwards in line with market realities.
+        </div>
+        <div>
+          * Pre - liquidation of investment will be treated within 48 hours from
+          the date the liquidation request is received.
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
