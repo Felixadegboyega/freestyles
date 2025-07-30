@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="p-5">
+    <div class="flex mb-4 items-center justify-between gap-3">
+      <div class="text-sm font-mono text-gray-700">Licode Photo Grid</div>
+      <img
+        src="dp.avif"
+        alt="Licode Display Picture"
+        class="rounded-full object-cover size-7"
+      />
+    </div>
+    <div
+      class="min-h-screen columns-[5_200px] mx-auto gap-x-4"
+      id="container"
+    ></div>
+
+    <div
+      class="flex justify-center font-mono italic divide-x gap-4 flex-wrap text-sm mt-10"
+    >
+      <div class="">
+        By
+        <a href="https://wa.me/+2348035292607" class="text-blue-600">Licode</a>
+      </div>
+      <a href="mailto:felixadegboyega2019@gmail.com" class="text-blue-600 pl-4"
+        >felixadegboyega2019@gmail.com</a
+      >
+    </div>
+  </body>
+
+  <script>
+    const imageArray = [
+      {
+        id: 1,
+        name: "Mountain Sunrise",
+        url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&fit=crop",
+        date: "2024-01-15",
+        photographer: "John Smith",
+      },
+      {
+        id: 2,
+        name: "Ocean Waves",
+        url: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&fit=crop",
+        date: "2024-02-03",
+        photographer: "Sarah Johnson",
+      },
+      {
+        id: 3,
+        name: "Forest Path",
+        url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&fit=crop",
+        date: "2024-01-28",
+        photographer: "Mike Davis",
+      },
+      {
+        id: 4,
+        name: "City Skyline",
+        url: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&fit=crop",
+        date: "2024-03-12",
+        photographer: "Emma Wilson",
+      },
+      {
+        id: 5,
+        name: "Desert Landscape",
+        url: "https://images.unsplash.com/photo-1447433819943-74a20887a81e?w=800&fit=crop",
+        date: "2024-02-20",
+        photographer: "Alex Thompson",
+      },
+      {
+        id: 6,
+        name: "Flower Field",
+        url: "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&fit=crop",
+        date: "2024-04-05",
+        photographer: "Lisa Chen",
+      },
+      {
+        id: 7,
+        name: "Snowy Mountains",
+        url: "https://images.unsplash.com/photo-1454391304352-2bf4678b1a7a?w=800&fit=crop",
+        date: "2024-01-10",
+        photographer: "David Brown",
+      },
+      {
+        id: 8,
+        name: "Coffee Cup",
+        url: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&fit=crop",
+        date: "2024-03-18",
+        photographer: "Anna Garcia",
+      },
+      {
+        id: 9,
+        name: "Library Books",
+        url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&fit=crop",
+        date: "2024-02-14",
+        photographer: "Tom Miller",
+      },
+      {
+        id: 10,
+        name: "Workspace Setup",
+        url: "https://images.unsplash.com/photo-1484807352052-23338990c6c6?w=800&fit=crop",
+        date: "2024-04-01",
+        photographer: "Rachel Green",
+      },
+      {
+        id: 11,
+        name: "Autumn Leaves",
+        url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&fit=crop",
+        date: "2024-03-25",
+        photographer: "Kevin Lee",
+      },
+      {
+        id: 12,
+        name: "Beach Sunset",
+        url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&fit=crop",
+        date: "2024-02-08",
+        photographer: "Maria Rodriguez",
+      },
+      {
+        id: 13,
+        name: "Urban Street",
+        url: "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800&fit=crop",
+        date: "2024-01-22",
+        photographer: "James Wilson",
+      },
+      {
+        id: 14,
+        name: "Food Photography",
+        url: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&fit=crop",
+        date: "2024-03-30",
+        photographer: "Sophie Martin",
+      },
+      {
+        id: 15,
+        name: "Architecture Detail",
+        url: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=800&fit=crop",
+        date: "2024-02-05",
+        photographer: "Robert Kim",
+      },
+      {
+        id: 16,
+        name: "Pet Portrait",
+        url: "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800&fit=crop",
+        date: "2024-04-20",
+        photographer: "Jennifer White",
+      },
+      {
+        id: 17,
+        name: "Architecture Detail",
+        url: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=800&fit=crop",
+        date: "2024-01-05",
+        photographer: "Robert Kim",
+      },
+      {
+        id: 18,
+        name: "Travel Destination",
+        url: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&fit=crop",
+        date: "2024-03-07",
+        photographer: "Amy Zhang",
+      },
+      {
+        id: 19,
+        name: "Abstract Art",
+        url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&fit=crop",
+        date: "2024-02-12",
+        photographer: "Daniel Taylor",
+      },
+      {
+        id: 20,
+        name: "Pet Portrait",
+        url: "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800&fit=crop",
+        date: "2024-04-15",
+        photographer: "Jennifer White",
+      },
+      {
+        id: 21,
+        name: "Minimalist Interior",
+        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&fit=crop",
+        date: "2024-01-30",
+        photographer: "Mark Thompson",
+      },
+      {
+        id: 22,
+        name: "Sports Action",
+        url: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&fit=crop",
+        date: "2024-03-22",
+        photographer: "Lauren Davis",
+      },
+      {
+        id: 23,
+        name: "Vintage Car",
+        url: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&fit=crop",
+        date: "2024-02-18",
+        photographer: "Steve Johnson",
+      },
+      {
+        id: 24,
+        name: "Garden Flowers",
+        url: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&fit=crop",
+        date: "2024-04-20",
+        photographer: "Michelle Brown",
+      },
+      {
+        id: 25,
+        name: "Night Photography",
+        url: "https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=800&fit=crop",
+        date: "2024-01-18",
+        photographer: "Ryan Garcia",
+      },
+      {
+        id: 26,
+        name: "Portrait Study",
+        url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&fit=crop",
+        date: "2024-03-15",
+        photographer: "Kelly Wilson",
+      },
+      {
+        id: 27,
+        name: "Industrial Scene",
+        url: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&fit=crop",
+        date: "2024-02-28",
+        photographer: "Brian Lee",
+      },
+      {
+        id: 28,
+        name: "Fashion Photography",
+        url: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&fit=crop",
+        date: "2024-04-08",
+        photographer: "Diana Martinez",
+      },
+      {
+        id: 29,
+        name: "Landscape Vista",
+        url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&fit=crop",
+        date: "2024-01-25",
+        photographer: "Paul Anderson",
+      },
+      {
+        id: 30,
+        name: "Portrait Study",
+        url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&fit=crop",
+        date: "2024-08-15",
+        photographer: "Kelly Wilson",
+      },
+      {
+        id: 1,
+        name: "Mountain Sunrise",
+        url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&fit=crop",
+        date: "2024-01-15",
+        photographer: "John Smith",
+      },
+      {
+        id: 9,
+        name: "Library Books",
+        url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&fit=crop",
+        date: "2024-02-14",
+        photographer: "Tom Miller",
+      },
+      {
+        id: 2,
+        name: "Ocean Waves",
+        url: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&fit=crop",
+        date: "2024-02-03",
+        photographer: "Sarah Johnson",
+      },
+      {
+        id: 3,
+        name: "Forest Path",
+        url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&fit=crop",
+        date: "2024-01-28",
+        photographer: "Mike Davis",
+      },
+      {
+        id: 4,
+        name: "City Skyline",
+        url: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&fit=crop",
+        date: "2024-03-12",
+        photographer: "Emma Wilson",
+      },
+      {
+        id: 5,
+        name: "Desert Landscape",
+        url: "https://images.unsplash.com/photo-1447433819943-74a20887a81e?w=800&fit=crop",
+        date: "2024-02-20",
+        photographer: "Alex Thompson",
+      },
+      {
+        id: 6,
+        name: "Flower Field",
+        url: "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&fit=crop",
+        date: "2024-04-05",
+        photographer: "Lisa Chen",
+      },
+      {
+        id: 7,
+        name: "Snowy Mountains",
+        url: "https://images.unsplash.com/photo-1454391304352-2bf4678b1a7a?w=800&fit=crop",
+        date: "2024-01-10",
+        photographer: "David Brown",
+      },
+      {
+        id: 8,
+        name: "Coffee Cup",
+        url: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&fit=crop",
+        date: "2024-03-18",
+        photographer: "Anna Garcia",
+      },
+      {
+        id: 9,
+        name: "Library Books",
+        url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&fit=crop",
+        date: "2024-02-14",
+        photographer: "Tom Miller",
+      },
+      {
+        id: 10,
+        name: "Workspace Setup",
+        url: "https://images.unsplash.com/photo-1484807352052-23338990c6c6?w=800&fit=crop",
+        date: "2024-04-01",
+        photographer: "Rachel Green",
+      },
+      {
+        id: 11,
+        name: "Autumn Leaves",
+        url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&fit=crop",
+        date: "2024-03-25",
+        photographer: "Kevin Lee",
+      },
+      {
+        id: 12,
+        name: "Beach Sunset",
+        url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&fit=crop",
+        date: "2024-02-08",
+        photographer: "Maria Rodriguez",
+      },
+      {
+        id: 13,
+        name: "Urban Street",
+        url: "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800&fit=crop",
+        date: "2024-01-22",
+        photographer: "James Wilson",
+      },
+      {
+        id: 14,
+        name: "Food Photography",
+        url: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&fit=crop",
+        date: "2024-03-30",
+        photographer: "Sophie Martin",
+      },
+      {
+        id: 15,
+        name: "Architecture Detail",
+        url: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=800&fit=crop",
+        date: "2024-02-05",
+        photographer: "Robert Kim",
+      },
+      {
+        id: 16,
+        name: "Pet Portrait",
+        url: "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800&fit=crop",
+        date: "2024-04-20",
+        photographer: "Jennifer White",
+      },
+      {
+        id: 17,
+        name: "Architecture Detail",
+        url: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=800&fit=crop",
+        date: "2024-01-05",
+        photographer: "Robert Kim",
+      },
+      {
+        id: 18,
+        name: "Travel Destination",
+        url: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&fit=crop",
+        date: "2024-03-07",
+        photographer: "Amy Zhang",
+      },
+      {
+        id: 19,
+        name: "Abstract Art",
+        url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&fit=crop",
+        date: "2024-02-12",
+        photographer: "Daniel Taylor",
+      },
+      {
+        id: 20,
+        name: "Pet Portrait",
+        url: "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800&fit=crop",
+        date: "2024-04-15",
+        photographer: "Jennifer White",
+      },
+      {
+        id: 21,
+        name: "Minimalist Interior",
+        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&fit=crop",
+        date: "2024-01-30",
+        photographer: "Mark Thompson",
+      },
+      {
+        id: 22,
+        name: "Sports Action",
+        url: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&fit=crop",
+        date: "2024-03-22",
+        photographer: "Lauren Davis",
+      },
+      {
+        id: 23,
+        name: "Vintage Car",
+        url: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&fit=crop",
+        date: "2024-02-18",
+        photographer: "Steve Johnson",
+      },
+      {
+        id: 24,
+        name: "Garden Flowers",
+        url: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&fit=crop",
+        date: "2024-04-20",
+        photographer: "Michelle Brown",
+      },
+      {
+        id: 25,
+        name: "Night Photography",
+        url: "https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=800&fit=crop",
+        date: "2024-01-18",
+        photographer: "Ryan Garcia",
+      },
+      {
+        id: 26,
+        name: "Portrait Study",
+        url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&fit=crop",
+        date: "2024-03-15",
+        photographer: "Kelly Wilson",
+      },
+      {
+        id: 27,
+        name: "Industrial Scene",
+        url: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&fit=crop",
+        date: "2024-02-28",
+        photographer: "Brian Lee",
+      },
+      {
+        id: 28,
+        name: "Fashion Photography",
+        url: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&fit=crop",
+        date: "2024-04-08",
+        photographer: "Diana Martinez",
+      },
+      {
+        id: 29,
+        name: "Landscape Vista",
+        url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&fit=crop",
+        date: "2024-01-25",
+        photographer: "Paul Anderson",
+      },
+      {
+        id: 30,
+        name: "Portrait Study",
+        url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&fit=crop",
+        date: "2024-08-15",
+        photographer: "Kelly Wilson",
+      },
+    ]
+
+    imageArray.forEach((image) => {
+      const imgElement = document.createElement("img")
+      imgElement.setAttribute("src", image.url)
+      imgElement.setAttribute("class", "size-full")
+
+      const overlayElement = document.createElement("div")
+      overlayElement.setAttribute(
+        "class",
+        "absolute group-hover:opacity-100 transition duration-500 opacity-0 bg-gradient-to-t from-black via-transparent z-10 inset-0 flex"
+      )
+
+      const detElement = `
+		<div class="mt-auto translate-y-10 group-hover:translate-y-0 transition duration-500">
+			<div class="flex p-4 text-sm text-white">
+				<div class="flex flex-col gap-1">
+					<span class="text-xs">Uploaded By:</span>
+					<h3 class="font-semibold">${image.name}</h3>
+					<p>${new Date(image.date).toDateString()}</p>
+				</div>
+			</div>
+		</div>
+	  `
+      overlayElement.innerHTML = detElement
+
+      const contElement = document.createElement("div")
+      contElement.setAttribute(
+        "class",
+        "mb-4 bg-slate-400 rounded-md overflow-hidden relative group"
+      )
+      contElement.appendChild(imgElement)
+      contElement.appendChild(overlayElement)
+
+      //   imgElement.setAttribute("width", "400")
+      document.getElementById("container").appendChild(contElement)
+    })
+  </script>
+</html>

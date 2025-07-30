@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.body {
+			padding: 1rem;
+			font-family: sans-serif;
+			font-size: .9rem;
+		}
+
+		.container {
+			/* border: 1px solid #ccc; */
+			padding: 1rem;
+			border-radius: .5rem;
+			max-width: 40rem;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.school-head {
+			display: block;
+			margin-bottom: 1rem;
+		}
+
+		.quote-block {
+			margin: .5rem 0;
+			border-left: 1px solid #112257;
+			padding: 1.2rem;
+			background-color: #1122570f;
+			display: flex;
+			flex-direction: column;
+			gap: .5rem;
+		}
+
+		.quote-block>p {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.quote-block>p>span {
+			min-width: 8rem;
+		}
+
+		.brand-btn {
+			background-color: #112257;
+			color: white;
+			padding: .7rem 1.2rem;
+			border-radius: .3rem;
+			border: none;
+			outline: none;
+			transition: all .2s ease-in-out;
+			cursor: pointer;
+			width: fit-content;
+		}
+
+		.brand-btn:hover {
+			background-color: #1A237E;
+		}
+
+		.powered-by {
+			font-size: .65rem;
+			margin-top: 4rem;
+			/* border-top: 1px solid #ccc;
+			padding-top: 1rem; */
+			color: #333;
+			display: flex;
+			justify-content: end;
+			gap: .5rem;
+			align-items: center;
+		}
+
+		.powered-by img {
+			height: 1rem;
+			display: inline;
+		}
+
+		@media (min-width: 400px) {
+			.quote-block>p {
+				flex-wrap: nowrap;
+			}
+		}
+	</style>
+
+	<body class="body">
+		<div class="container">
+			<p>Dear <b>Felix Adegboyega</b></p>
+			<p>
+				We are pleased to inform you that your voucher (PV34) raised on January 18, 2024, has been
+				<b>approved</b> and is now <b>awaiting
+					Level 2 approval</b>. Below are the details
+			</p>
+			<!-- has progressed to the next approval stage -->
+			<div class="quote-block">
+				<p>
+					<span>ID:</span> <span>PV34</span>
+				</p>
+				<p>
+					<span>Amount:</span> <b>₦295,000.00</b>
+				</p>
+				<p>
+					<span>Current Status:</span> <span>Approved (Awaiting Level 2 Approval)</span>
+				</p>
+				<p>
+					<span>Date:</span> <span>August 15, 2024</span>
+				</p>
+				<p>
+					<span>Payment Details:</span> <span>Being Governing Council Sitting Allowances - Payable to Prof.
+						Ayankeye &
+						others</span>
+				</p>
+				<p>
+					<span>Summary:</span> <span>Being Governing Council Sitting Allowances - Payable to Prof. Ayankeye &
+						others</span>
+				</p>
+			</div>
+			<b>Next Steps:</b>
+			<p>To view your raised vouchers, please click the button below:</p>
+
+			<button class="brand-btn">My Vouchers</button>
+
+			<p>We will keep you updated on the status of your voucher. If you have any questions or concerns, please
+				feel free to reach
+				out to us.</p>
+			<p>Best regards,</p>
+			<i class="school-head">
+				Nigerian Baptist Theological Seminary <br>
+				P.M.B Ogbomoso
+			</i>
+
+			<p></p>
+			<div class="powered-by">
+				Powered By
+				<a target="_blank" href="https://edozzier.com/">
+					<img src="https://edossier.app/admin/assets/img/edozzier-log.png" />
+				</a>
+			</div>
+		</div>
+	</body>
+
+</html>

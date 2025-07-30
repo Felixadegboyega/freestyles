@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			height: 95vh;
+			font-size: .9rem;
+			max-width: 75rem;
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			padding: 1rem;
+			font-family: sans-serif;
+		}
+
+		.header {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		.details-box-container {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+			margin-top: -1rem;
+		}
+
+		.details-box-container>div {
+			border: 1px solid #ccc;
+			padding: .85rem;
+			display: flex;
+			gap: .4rem;
+			border-radius: .5rem;
+			flex-direction: column;
+		}
+
+		.details-box-container>div>div {
+			font-weight: 500;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			text-align: left;
+		}
+
+		td,
+		th {
+			padding: .5rem;
+			border-bottom: 1px solid #ccc;
+			border-radius: 1rem;
+		}
+
+		.items-head {
+			display: flex;
+			align-items: center;
+			gap: .5rem;
+			flex-wrap: wrap;
+			margin-top: .5rem;
+		}
+
+		.approval-line {
+			display: flex;
+			flex-direction: column;
+			gap: .25rem;
+			padding-bottom: .5rem;
+			border-bottom: 1px solid #ccc;
+		}
+
+		.powered-by {
+			font-size: .65rem;
+			margin-top: auto;
+			color: #333;
+			display: flex;
+			justify-content: end;
+			gap: .5rem;
+			align-items: center;
+		}
+
+		.powered-by img {
+			height: 1rem;
+			display: inline;
+		}
+	</style>
+
+	<body>
+		<div class="container">
+			<div class="header">
+				<!-- <img src="" alt=""> -->
+				<div style="background-color: aliceblue; border-radius: .5rem; height: 3rem; width: 3rem; "></div>
+				<div style="display: flex; flex-direction: column;">
+					<h3>Nigeria Baptist Theological Seminary</h3>
+					<p>Ogbomoso, Nigeria</p>
+				</div>
+			</div>
+
+			<i style=" color: #333; font-size: .85rem;">Payment Voucher Print</i>
+
+			<div style="display: flex; flex-wrap: wrap; gap:1rem">
+				<div>
+					Voucher ID: <span style="font-weight:600;">PV34</span>
+				</div>
+				<div>
+					Status: <span style="font-weight:600;">
+						Paid - <span>
+							<!-- {{voucherDetail.status}} <span *ngIf="voucherDetail.status == 'Approved' && remainingAmount != 0"> -->
+							<b> Awaiting Payment </b>
+							<!-- <b> ({{ remainingAmount < voucherDetail.total_price ? "Partly Paid" : "Awaiting Payment"}}) </b> -->
+						</span>
+					</span>
+				</div>
+				<div>
+					Payee: <span style="font-weight:600;">ADEGBOYEGA FELIX - 120</span>
+				</div>
+			</div>
+			<div class="details-box-container">
+				<div>
+					<small>Cost Center:</small>
+					<div>9000 - STATIONAERIES, MACHINES & ALL</div>
+				</div>
+				<div>
+					<small>Address:</small>
+					<div>Bursary</div>
+				</div>
+				<div>
+					<small>Date:</small>
+					<div>12th January, 2024</div>
+				</div>
+				<section style="width: 100%;"></section>
+				<div>
+					<small>Voucher Summary:</small>
+					<div>Being Purchase of Stationery into the Central Store - Payable to Uncle B</div>
+				</div>
+				<div>
+					<small>Payment Details:</small>
+					<div>Being Purchase of Stationery into the Central Store - Payable to Uncle B</div>
+				</div>
+			</div>
+
+			<div>
+				<h4>Voucher Items</h4>
+				<div class="items-head">
+					<p>
+						<span>Total:</span>
+						<span style="font-weight: 600;">#200,000.00</span>
+					</p>
+					<p>
+						<span>Amount in words:</span>
+						<span style="font-weight: 500; text-transform: capitalize;">Two hundred thousand naira
+							only</span>
+					</p>
+				</div>
+			</div>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Item</th>
+						<th>Description</th>
+						<th>Quantity</th>
+						<th>Unit Price</th>
+						<th>Total Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Item 1</td>
+						<td>Description</td>
+						<td>10</td>
+						<td>#20,000.00</td>
+						<td>#200,000.00</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div>
+				<h4 style="margin-bottom:1rem ;">Approval</h4>
+
+				<p *ngFor="let approval of approvalRecord" class="approval-line">
+					<span>Approved By: <span>Felix Adegboyega Oluwaferanmi</span></span>
+					<span>Date: <span>20 January, 2024</span></span>
+					<span> Message: <span *ngIf="approval.message">Approved</span> </span>
+				</p>
+				<!-- <p *ngFor="let approval of approvalRecord"
+					>
+					<span>{{approval.status == '0' ? 'Rejected' : 'Approved'}} By: <span
+							class="font-medium capitalize">{{approval.lastname}} {{approval.firstname}}
+							{{approval?.middlename}}</span></span>
+					<span>Date: <span>{{approval.date}}</span></span>
+					<span>
+						Message:
+						<span *ngIf="approval.message">{{approval.message}}</span>
+						<span *ngIf="!approval.message">No message</span>
+					</span>
+				</p> -->
+			</div>
+
+			<div class="powered-by">
+				Powered By
+				<a target="_blank" href="https://edozzier.com/">
+					<img src="https://edossier.app/admin/assets/img/edozzier-log.png" />
+				</a>
+			</div>
+		</div>
+	</body>
+
+</html>

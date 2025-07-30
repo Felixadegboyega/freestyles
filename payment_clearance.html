@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media print {
+			@page {
+				margin: 0;
+				size: auto;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+
+			}
+
+		}
+
+		.container {
+			height: 95vh;
+			font-size: 1.1rem;
+			max-width: 75rem;
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			padding: 3rem 3rem 0;
+			font-family: sans-serif;
+		}
+
+		.header {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		.details-box-container {
+			display: grid;
+			/* width: 100%; */
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			min-width: 45rem;
+		}
+
+		.details-box-container>div {
+			padding: .85rem;
+			display: flex;
+			gap: .4rem;
+			flex-direction: column;
+		}
+
+		.details-box-container>div>div {
+			font-weight: 500;
+		}
+
+		.powered-by {
+			font-size: .65rem;
+			margin-top: auto;
+			color: #333;
+			display: flex;
+			justify-content: end;
+			gap: .5rem;
+			align-items: center;
+		}
+
+		.powered-by img {
+			height: 1rem;
+			display: inline;
+		}
+	</style>
+
+	<body>
+		<div class="container">
+			<img style="position: absolute; height: 18rem; z-index: -10; opacity: .1; right: 0; top: 0;"
+				src="https://nbts.edossier.app/edozzier/upload/company/nbts-logo-nbts22.png">
+
+			<div class="header">
+				<!-- <img src="" alt=""> -->
+				<img style=" width: 3rem; " src="https://nbts.edossier.app/edozzier/upload/company/nbts-logo-nbts22.png"
+					alt="Company Logo">
+				<div style="display: flex; flex-direction: column; font-size: 1.15rem;">
+					<h3>Nigeria Baptist Theological Seminary</h3>
+					<p>Ogbomoso, Nigeria</p>
+				</div>
+			</div>
+
+			<b
+				style=" color: #1A237E; font-size: 1rem; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 1rem 0;">CLASS/EXAM
+				ADMITTANCE SLIP</b>
+
+
+			<div style="display: flex; align-items: center; gap: 1rem; ">
+				<img style="height: 9rem; object-fit: cover; border-radius: .3rem;"
+					src="https://nbts.edossier.app/edozzier/upload/schools/nbts/210247IMG-20210901-WA0021.jpg"
+					alt="Passport Missing">
+				<div class="details-box-container">
+					<div>
+						<span>Student Name:</span>
+						<div><b>AFOLABI</b> OLUWADARASIMI JOSHUA</div>
+					</div>
+					<div>
+						<span>Student ID.:</span>
+						<div>171790</div>
+					</div>
+					<div>
+						<span>Gender:</span>
+						<div>Male</div>
+					</div>
+					<div>
+						<span>Class:</span>
+						<div>SCIENCE - SSS1 - H</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<p>I hereby confirm that AFOLABI OLUWADARASIMI JOSHUA of SCIENCE - SSS1 - H has paid 10.00% of his fee.
+				</p>
+
+				<div
+					style="display: flex; flex-wrap: wrap; margin-top: 5rem; justify-content: space-between; column-gap: 2rem; row-gap: 5rem;">
+					<div
+						style="display: flex; flex-direction:  column; align-items: center; justify-content: center; gap: .5rem;">
+						<p>....................................................</p>
+						<h5>HOD</h5>
+					</div>
+					<div
+						style="display: flex; flex-direction:  column; align-items: center; justify-content: center; gap: .5rem;">
+						<p>....................................................</p>
+						<h5>Bursary</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="powered-by">
+				Powered By
+				<a target="_blank" href="https://edozzier.com/">
+					<img src="https://edossier.app/admin/assets/img/edozzier-log.png" />
+				</a>
+			</div>
+		</div>
+	</body>
+
+</html>
